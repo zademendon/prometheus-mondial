@@ -4,6 +4,7 @@ window.onload = function () {
     if (totalValue) {
         const transIdNum = document.querySelector('body > div.body-section > div > div > div.payment-success-content > div > div.col-md-6 > div > div > p:nth-child(2) > a').textContent
 
+        window.dataLayer = window.dataLayer || [];
         dataLayer.push({ ecommerce: null });
         dataLayer.push({
             event: 'purchase',
@@ -13,5 +14,9 @@ window.onload = function () {
                 currency: 'USD',
             }
         });
+
+        window.uetq = window.uetq || [];
+        window.uetq.push('event', '', {"revenue_value":totalValue,"currency":"USD"});
+        
     }
 }
